@@ -11,20 +11,7 @@ function getComputerChoice () {
     };
 } 
 
-/* Capture the user's choice 
-
-function getPlayerChoice (userInput) {
-    userInput = userInput.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-        return userInput;
-    } else {
-        console.log("Invalid Choice");
-    }
-}
-
-*/
-
-/* Run the game */
+/* Function to play one round */
 
 function playRound (playerSelection, computerSelection) {
     
@@ -60,35 +47,42 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
+/* create variables to keep score */
+
 let playerScore = 0;
 let computerScore = 0;
 
-/* checks */
+/* Function to play a five-round game and log the results */
 
 function game () {
-    playerSelection = 'rock';
+    playerSelection = prompt("Round 1: Please choose rock, paper or scissors");
+    playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
-    console.log(`Round 1. Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    console.log(`Round 1: Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
     playRound (playerSelection, computerSelection);
     
-    playerSelection = 'paper';
+    playerSelection = prompt("Round 2: Please choose rock, paper or scissors");
+    playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
-    console.log(`Round 2.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    console.log(`Round 2:  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
     playRound (playerSelection, computerSelection);
     
-    playerSelection = 'scissors';
+    playerSelection = prompt("Round 3: Please choose rock, paper or scissors");
+    playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
-    console.log(`Round 3.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    console.log(`Round 3:  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
     playRound (playerSelection, computerSelection);
     
-    playerSelection = 'rock';
+    playerSelection = prompt("Round 4: Please choose rock, paper or scissors");
+    playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
-    console.log(`Round 4.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    console.log(`Round 4:  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
     playRound (playerSelection, computerSelection);
     
-    playerSelection = 'paper';
+    playerSelection = prompt("Final Round: Please choose rock, paper or scissors");
+    playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
-    console.log(`Final Round.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    console.log(`Final Round:  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
     playRound (playerSelection, computerSelection);
 
     console.log(`Player scored ${playerScore}, The Computer scored ${computerScore}`)
@@ -100,5 +94,7 @@ function game () {
         console.log('The game was a draw!');
     }
 }
+
+/* Play a game */
 
 game ();
