@@ -13,7 +13,7 @@ function getComputerChoice () {
 
 /* Capture the user's choice 
 
-function playerChoice (userInput) {
+function getPlayerChoice (userInput) {
     userInput = userInput.toLowerCase();
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
         return userInput;
@@ -29,35 +29,76 @@ function playerChoice (userInput) {
 function playRound (playerSelection, computerSelection) {
     
     if (playerSelection === computerSelection) {
-        return "It's a draw"
-
+        console.log ("It's a draw")
+        
     } else if  (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
-            return 'You win!'
+            console.log('Player wins the round!');
+            playerScore++
         } else if (computerSelection === 'paper') {
-            return 'The computer wins!'
+            console.log('The computer wins the round!');
+            computerScore++
         }
 
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
-            return 'You win!'
+            console.log('Player wins the round!');
+            playerScore++
         } else if (computerSelection === 'scissors') {
-            return 'The computer wins!'
+            console.log('The computer wins the round!');
+            computerScore++
         } 
 
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            return 'You win!'
+            console.log('Player wins the round!');
+            playerScore++
         } else if (computerSelection === 'rock') {
-            return 'The computer wins!'
+            console.log('The computer wins the round!');
+            computerScore++
         } 
     }
 }
 
+let playerScore = 0;
+let computerScore = 0;
 
 /* checks */
-playerSelection = 'rock';
-computerSelection = getComputerChoice();
-console.log(`Player chose ${playerSelection}.`);
-console.log(`Computer chose ${computerSelection}.`);
 
+function game () {
+    playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    console.log(`Round 1. Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    playRound (playerSelection, computerSelection);
+    
+    playerSelection = 'paper';
+    computerSelection = getComputerChoice();
+    console.log(`Round 2.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    playRound (playerSelection, computerSelection);
+    
+    playerSelection = 'scissors';
+    computerSelection = getComputerChoice();
+    console.log(`Round 3.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    playRound (playerSelection, computerSelection);
+    
+    playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    console.log(`Round 4.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    playRound (playerSelection, computerSelection);
+    
+    playerSelection = 'paper';
+    computerSelection = getComputerChoice();
+    console.log(`Final Round.  Player chose ${playerSelection}, The Computer chose ${computerSelection}.`);
+    playRound (playerSelection, computerSelection);
+
+    console.log(`Player scored ${playerScore}, The Computer scored ${computerScore}`)
+    if (computerScore > playerScore) {
+        console.log('The Computer Wins the game!');
+    } else if (computerScore < playerScore) {
+        console.log('Player wins the game!');
+    } else {
+        console.log('The game was a draw!');
+    }
+}
+
+game ();
