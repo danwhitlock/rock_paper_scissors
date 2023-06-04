@@ -26,7 +26,7 @@ function playerChoice (userInput) {
 
 /* Run the game */
 
-function playGame (playerSelection, computerChoice) {
+function playGame (playerSelection, computerSelection) {
     
     if (playerSelection === computerSelection) {
         return "It's a draw"
