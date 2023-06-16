@@ -11,6 +11,27 @@ function getComputerChoice () {
     };
 } 
 
+/* Get player selection from buttons */
+
+const rockButton = document.getElementById('rock_btn');
+const paperButton = document.getElementById('paper_btn');
+const scissorsButton = document.getElementById('scissors_btn');
+
+let playerSelection;
+
+rockButton.addEventListener('click', function() {
+    playerSelection = 'rock';
+});
+
+paperButton.addEventListener('click', function() {
+    playerSelection = 'paper';
+});
+
+scissorsButton.addEventListener('click', function() {
+    playerSelection = 'scissors';
+});
+
+
 /* Function to play one round */
 
 function playRound (playerSelection, computerSelection) {
@@ -52,7 +73,7 @@ function playRound (playerSelection, computerSelection) {
 let playerScore = 0;
 let computerScore = 0;
 
-/* Function to play a five-round game and log the results */
+/* Function to play a five-round game and log the results 
 
 function game () {
     playerSelection = prompt("Round 1: Please choose rock, paper or scissors");
@@ -95,6 +116,9 @@ function game () {
     }
 }
 
-/* Play a game */
+
+ Play a game
 
 game ();
+
+*/
