@@ -22,19 +22,16 @@ let playerSelection;
 
 rockButton.addEventListener('click', function() {
     playerSelection = 'rock';
-    getComputerChoice ();
     playRound();
 });
 
 paperButton.addEventListener('click', function() {
     playerSelection = 'paper';
-    getComputerChoice();
     playRound();
 });
 
 scissorsButton.addEventListener('click', function() {
     playerSelection = 'scissors';
-    getComputerChoice();
     playRound();
 });
 
@@ -43,7 +40,7 @@ scissorsButton.addEventListener('click', function() {
 let playerScore = 0;
 let computerScore = 0;
 
-/* Function to play one round */
+/* Function to play the game */
 
     const playerChoseDiv = document.querySelector('.player_chose');
     const computerChoseDiv = document.querySelector('.computer_chose');
